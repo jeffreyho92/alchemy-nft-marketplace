@@ -1,0 +1,264 @@
+{
+  "address": "0x4D2cB6fFd5edb6a35031073dAd972CF410305623",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "rewardRate",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "Execute",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "interest",
+          "type": "uint256"
+        }
+      ],
+      "name": "Received",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "Staking",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "rewardRatePerSecond",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "stake",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "stakes",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "balance",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "depositTimestamp",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "withdraw",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "withdrawalDeadline",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "withdrawalTimeLeft",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "receive"
+    }
+  ],
+  "transactionHash": "0x9be1243e9347eb1e6dd6fc2ce3ad6285735e8e7132bcc18504dd86d0dd065cb0",
+  "receipt": {
+    "to": null,
+    "from": "0x98580ad1AA98cd8F75f21C0D9a4cDB6c99904db6",
+    "contractAddress": "0x4D2cB6fFd5edb6a35031073dAd972CF410305623",
+    "transactionIndex": 61,
+    "gasUsed": "430110",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x52b5c861f39abcdbe9c7e37c4cf3d187c79696ccd702535cd92b3a32b9a22a05",
+    "transactionHash": "0x9be1243e9347eb1e6dd6fc2ce3ad6285735e8e7132bcc18504dd86d0dd065cb0",
+    "logs": [],
+    "blockNumber": 8232668,
+    "cumulativeGasUsed": "11835386",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "100000000000000"
+  ],
+  "numDeployments": 1,
+  "solcInputHash": "6a8d7c6300ffc7883e742b1c97103bff",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"rewardRate\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Execute\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"interest\",\"type\":\"uint256\"}],\"name\":\"Received\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Staking\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"rewardRatePerSecond\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"stake\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"stakes\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"balance\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"depositTimestamp\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"withdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"withdrawalDeadline\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"withdrawalTimeLeft\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/Staker.sol\":\"Staker\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":300},\"remappings\":[]},\"sources\":{\"contracts/Staker.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.7;\\n\\ncontract Staker {\\n\\n    struct Stake{\\n        uint256 balance;\\n        uint256 depositTimestamp;\\n    }\\n\\n    mapping(address => Stake) public stakes;\\n\\n    uint256 public rewardRatePerSecond;\\n    uint256 public withdrawalDeadline = 60 seconds;\\n\\n    event Staking(address indexed sender, uint256 amount);\\n    event Execute(address indexed sender, uint256 amount);\\n    event Received(address indexed sender, uint256 amount, uint256 interest);\\n\\n    constructor(uint256 rewardRate) {\\n        rewardRatePerSecond = rewardRate;\\n    }\\n\\n    modifier withdrawalDeadlineReached(bool requireReached){\\n        uint256 timeRemaining = withdrawalTimeLeft();\\n        if(requireReached){\\n            require(timeRemaining == 0, \\\"Withdrawal period is not reached yet\\\");\\n        } else {\\n            require(timeRemaining > 0, \\\"Withdrawal period has been reached\\\");\\n        }\\n        _;\\n    }\\n    \\n    function stake() public payable withdrawalDeadlineReached(false){\\n        require(stakes[msg.sender].balance <= 0, \\\"You are staking!\\\");\\n        stakes[msg.sender] = Stake(msg.value, block.timestamp);\\n        emit Staking(msg.sender, msg.value);\\n    }\\n\\n    function withdraw() public withdrawalDeadlineReached(true){\\n        require(stakes[msg.sender].balance > 0, \\\"You have no balance to withdraw!\\\");\\n        uint256 individualBalance = stakes[msg.sender].balance;\\n        uint256 interest = ((block.timestamp - stakes[msg.sender].depositTimestamp ) * rewardRatePerSecond);\\n        uint256 indBalanceRewards = individualBalance + interest;\\n        \\n        // contract's balance not enought to pay interest\\n        if(address(this).balance < indBalanceRewards){\\n            interest = address(this).balance - individualBalance;\\n            indBalanceRewards = address(this).balance;\\n        }\\n        stakes[msg.sender].balance = 0;\\n        stakes[msg.sender].depositTimestamp = 0;\\n\\n        (bool sent, ) = msg.sender.call{value: indBalanceRewards}(\\\"\\\");\\n        require(sent, \\\"RIP; withdrawal failed!\\\");\\n        emit Received(msg.sender, indBalanceRewards, interest);\\n    }\\n\\n    function withdrawalTimeLeft() public view returns (uint256){\\n        uint256 depositTimestamp = block.timestamp;\\n        if(stakes[msg.sender].depositTimestamp > 0){\\n            depositTimestamp = stakes[msg.sender].depositTimestamp;\\n        }\\n        uint256 deadline = depositTimestamp + withdrawalDeadline;\\n        if(block.timestamp >= deadline){\\n            return (0);\\n        } else {\\n            return (deadline - block.timestamp);\\n        }\\n    }\\n\\n    receive() external payable {\\n    }\\n}\",\"keccak256\":\"0xac04754bfbc7588dee49c09207d73a923fb342dcda4af1213bfe9ece1d6539b5\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x6080604052603c60025534801561001557600080fd5b506040516106633803806106638339810160408190526100349161003c565b600155610055565b60006020828403121561004e57600080fd5b5051919050565b6105ff806100646000396000f3fe6080604052600436106100695760003560e01c80635d773b2c116100435780635d773b2c146100e2578063be31069714610106578063f78941761461011c57600080fd5b806316934fc4146100755780633a4b66f1146100c35780633ccfd60b146100cd57600080fd5b3661007057005b600080fd5b34801561008157600080fd5b506100a96100903660046104a2565b6000602081905290815260409020805460019091015482565b604080519283526020830191909152015b60405180910390f35b6100cb610131565b005b3480156100d957600080fd5b506100cb610245565b3480156100ee57600080fd5b506100f860015481565b6040519081526020016100ba565b34801561011257600080fd5b506100f860025481565b34801561012857600080fd5b506100f8610440565b60008061013c610440565b9050811561017057801561016b5760405162461bcd60e51b815260040161016290610521565b60405180910390fd5b610190565b600081116101905760405162461bcd60e51b8152600401610162906104df565b33600090815260208190526040902054156101e05760405162461bcd60e51b815260206004820152601060248201526f596f7520617265207374616b696e672160801b6044820152606401610162565b6040805180820182523480825242602080840191825233600081815280835286902094518555915160019094019390935592519081527fb831f69f1cebc12b23cd864ce5bfea2669d01956050a0147d71d418074559c21910160405180910390a25050565b60016000610251610440565b9050811561027c5780156102775760405162461bcd60e51b815260040161016290610521565b61029c565b6000811161029c5760405162461bcd60e51b8152600401610162906104df565b336000908152602081905260409020546102f85760405162461bcd60e51b815260206004820181905260248201527f596f752068617665206e6f2062616c616e636520746f207769746864726177216044820152606401610162565b3360009081526020819052604081208054600180549201549092919061031e904261059c565b610328919061057d565b905060006103368284610565565b9050804710156103505761034a834761059c565b91504790505b336000818152602081905260408082208281556001018290555190919083908381818185875af1925050503d80600081146103a7576040519150601f19603f3d011682016040523d82523d6000602084013e6103ac565b606091505b50509050806103fd5760405162461bcd60e51b815260206004820152601760248201527f5249503b207769746864726177616c206661696c6564210000000000000000006044820152606401610162565b604080518381526020810185905233917f74cf3d18d0ddca79038197ad0dd2c7fa5005ef61a5d1ed190e8a8a437e2fcf10910160405180910390a2505050505050565b3360009081526020819052604081206001015442901561046f5750336000908152602081905260409020600101545b60006002548261047f9190610565565b90508042106104915760009250505090565b61049b428261059c565b9250505090565b6000602082840312156104b457600080fd5b813573ffffffffffffffffffffffffffffffffffffffff811681146104d857600080fd5b9392505050565b60208082526022908201527f5769746864726177616c20706572696f6420686173206265656e207265616368604082015261195960f21b606082015260800190565b60208082526024908201527f5769746864726177616c20706572696f64206973206e6f742072656163686564604082015263081e595d60e21b606082015260800190565b60008219821115610578576105786105b3565b500190565b6000816000190483118215151615610597576105976105b3565b500290565b6000828210156105ae576105ae6105b3565b500390565b634e487b7160e01b600052601160045260246000fdfea2646970667358221220af1639022068d19612879b4de78fe314c63fade78ccdf79aa3e6d54f899683b364736f6c63430008070033",
+  "deployedBytecode": "0x6080604052600436106100695760003560e01c80635d773b2c116100435780635d773b2c146100e2578063be31069714610106578063f78941761461011c57600080fd5b806316934fc4146100755780633a4b66f1146100c35780633ccfd60b146100cd57600080fd5b3661007057005b600080fd5b34801561008157600080fd5b506100a96100903660046104a2565b6000602081905290815260409020805460019091015482565b604080519283526020830191909152015b60405180910390f35b6100cb610131565b005b3480156100d957600080fd5b506100cb610245565b3480156100ee57600080fd5b506100f860015481565b6040519081526020016100ba565b34801561011257600080fd5b506100f860025481565b34801561012857600080fd5b506100f8610440565b60008061013c610440565b9050811561017057801561016b5760405162461bcd60e51b815260040161016290610521565b60405180910390fd5b610190565b600081116101905760405162461bcd60e51b8152600401610162906104df565b33600090815260208190526040902054156101e05760405162461bcd60e51b815260206004820152601060248201526f596f7520617265207374616b696e672160801b6044820152606401610162565b6040805180820182523480825242602080840191825233600081815280835286902094518555915160019094019390935592519081527fb831f69f1cebc12b23cd864ce5bfea2669d01956050a0147d71d418074559c21910160405180910390a25050565b60016000610251610440565b9050811561027c5780156102775760405162461bcd60e51b815260040161016290610521565b61029c565b6000811161029c5760405162461bcd60e51b8152600401610162906104df565b336000908152602081905260409020546102f85760405162461bcd60e51b815260206004820181905260248201527f596f752068617665206e6f2062616c616e636520746f207769746864726177216044820152606401610162565b3360009081526020819052604081208054600180549201549092919061031e904261059c565b610328919061057d565b905060006103368284610565565b9050804710156103505761034a834761059c565b91504790505b336000818152602081905260408082208281556001018290555190919083908381818185875af1925050503d80600081146103a7576040519150601f19603f3d011682016040523d82523d6000602084013e6103ac565b606091505b50509050806103fd5760405162461bcd60e51b815260206004820152601760248201527f5249503b207769746864726177616c206661696c6564210000000000000000006044820152606401610162565b604080518381526020810185905233917f74cf3d18d0ddca79038197ad0dd2c7fa5005ef61a5d1ed190e8a8a437e2fcf10910160405180910390a2505050505050565b3360009081526020819052604081206001015442901561046f5750336000908152602081905260409020600101545b60006002548261047f9190610565565b90508042106104915760009250505090565b61049b428261059c565b9250505090565b6000602082840312156104b457600080fd5b813573ffffffffffffffffffffffffffffffffffffffff811681146104d857600080fd5b9392505050565b60208082526022908201527f5769746864726177616c20706572696f6420686173206265656e207265616368604082015261195960f21b606082015260800190565b60208082526024908201527f5769746864726177616c20706572696f64206973206e6f742072656163686564604082015263081e595d60e21b606082015260800190565b60008219821115610578576105786105b3565b500190565b6000816000190483118215151615610597576105976105b3565b500290565b6000828210156105ae576105ae6105b3565b500390565b634e487b7160e01b600052601160045260246000fdfea2646970667358221220af1639022068d19612879b4de78fe314c63fade78ccdf79aa3e6d54f899683b364736f6c63430008070033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 11,
+        "contract": "contracts/Staker.sol:Staker",
+        "label": "stakes",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_mapping(t_address,t_struct(Stake)6_storage)"
+      },
+      {
+        "astId": 13,
+        "contract": "contracts/Staker.sol:Staker",
+        "label": "rewardRatePerSecond",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 16,
+        "contract": "contracts/Staker.sol:Staker",
+        "label": "withdrawalDeadline",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_uint256"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_mapping(t_address,t_struct(Stake)6_storage)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => struct Staker.Stake)",
+        "numberOfBytes": "32",
+        "value": "t_struct(Stake)6_storage"
+      },
+      "t_struct(Stake)6_storage": {
+        "encoding": "inplace",
+        "label": "struct Staker.Stake",
+        "members": [
+          {
+            "astId": 3,
+            "contract": "contracts/Staker.sol:Staker",
+            "label": "balance",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 5,
+            "contract": "contracts/Staker.sol:Staker",
+            "label": "depositTimestamp",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_uint256"
+          }
+        ],
+        "numberOfBytes": "64"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}

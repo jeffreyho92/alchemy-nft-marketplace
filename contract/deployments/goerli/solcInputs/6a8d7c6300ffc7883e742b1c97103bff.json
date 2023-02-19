@@ -1,0 +1,35 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/Staker.sol": {
+      "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.7;\n\ncontract Staker {\n\n    struct Stake{\n        uint256 balance;\n        uint256 depositTimestamp;\n    }\n\n    mapping(address => Stake) public stakes;\n\n    uint256 public rewardRatePerSecond;\n    uint256 public withdrawalDeadline = 60 seconds;\n\n    event Staking(address indexed sender, uint256 amount);\n    event Execute(address indexed sender, uint256 amount);\n    event Received(address indexed sender, uint256 amount, uint256 interest);\n\n    constructor(uint256 rewardRate) {\n        rewardRatePerSecond = rewardRate;\n    }\n\n    modifier withdrawalDeadlineReached(bool requireReached){\n        uint256 timeRemaining = withdrawalTimeLeft();\n        if(requireReached){\n            require(timeRemaining == 0, \"Withdrawal period is not reached yet\");\n        } else {\n            require(timeRemaining > 0, \"Withdrawal period has been reached\");\n        }\n        _;\n    }\n    \n    function stake() public payable withdrawalDeadlineReached(false){\n        require(stakes[msg.sender].balance <= 0, \"You are staking!\");\n        stakes[msg.sender] = Stake(msg.value, block.timestamp);\n        emit Staking(msg.sender, msg.value);\n    }\n\n    function withdraw() public withdrawalDeadlineReached(true){\n        require(stakes[msg.sender].balance > 0, \"You have no balance to withdraw!\");\n        uint256 individualBalance = stakes[msg.sender].balance;\n        uint256 interest = ((block.timestamp - stakes[msg.sender].depositTimestamp ) * rewardRatePerSecond);\n        uint256 indBalanceRewards = individualBalance + interest;\n        \n        // contract's balance not enought to pay interest\n        if(address(this).balance < indBalanceRewards){\n            interest = address(this).balance - individualBalance;\n            indBalanceRewards = address(this).balance;\n        }\n        stakes[msg.sender].balance = 0;\n        stakes[msg.sender].depositTimestamp = 0;\n\n        (bool sent, ) = msg.sender.call{value: indBalanceRewards}(\"\");\n        require(sent, \"RIP; withdrawal failed!\");\n        emit Received(msg.sender, indBalanceRewards, interest);\n    }\n\n    function withdrawalTimeLeft() public view returns (uint256){\n        uint256 depositTimestamp = block.timestamp;\n        if(stakes[msg.sender].depositTimestamp > 0){\n            depositTimestamp = stakes[msg.sender].depositTimestamp;\n        }\n        uint256 deadline = depositTimestamp + withdrawalDeadline;\n        if(block.timestamp >= deadline){\n            return (0);\n        } else {\n            return (deadline - block.timestamp);\n        }\n    }\n\n    receive() external payable {\n    }\n}"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": true,
+      "runs": 300
+    },
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}
