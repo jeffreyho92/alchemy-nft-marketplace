@@ -39,8 +39,8 @@ export default function Marketplace() {
     //     },
     // ];
     const [data, updateData] = useState([])
-    const [contractNFT, setContractNFT] = useState(null)
-    const [contractNFTMarketplace, setContractNFTMarketplace] = useState(null)
+    // const [contractNFT, setContractNFT] = useState(null)
+    // const [contractNFTMarketplace, setContractNFTMarketplace] = useState(null)
     const [loaded, setLoaded] = useState(false)
     const authState = useSelector(selectAuthState)
 
@@ -48,21 +48,21 @@ export default function Marketplace() {
     // console.log("listedNfts", listedNfts)
 
     useEffect(async () => {
-        var result = await connectWeb3()
-        if (result) {
-            // setWeb3(result.web3);
-            setContractNFT(result.contractNFT)
-            setContractNFTMarketplace(result.contractNFTMarketplace)
-        }
+        // var result = await connectWeb3()
+        // if (result) {
+        //     // setWeb3(result.web3);
+        //     // setContractNFT(result.contractNFT)
+        //     // setContractNFTMarketplace(result.contractNFTMarketplace)
+        // }
     }, [])
 
     useEffect(async () => {
         initial()
         // }, [contractNFTMarketplace])
-    }, [contractNFT, listedNfts])
+    }, [listedNfts])
 
     const initial = async () => {
-        if (!contractNFT || !listedNfts) return
+        if (!listedNfts) return
         // var arrAllNFT = await contractNFTMarketplace.methods.getAllNFTs().call();
 
         var arrNFT = []
@@ -77,7 +77,7 @@ export default function Marketplace() {
                 // var tokenURI = await contractNFT.methods.tokenURI(tokenId).call()
                 var nftContract = await connectNFTContract(listedToken.nftAddress)
                 if (!nftContract) {
-                    return setMessage("NFT address invalid!")
+                    return console.log("NFT address invalid!")
                 }
                 var tokenURI = await nftContract.methods.tokenURI(tokenId).call()
                 if (!tokenURI) {
