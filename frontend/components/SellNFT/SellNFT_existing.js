@@ -17,8 +17,6 @@ export default function SellNFT_existing() {
     // const [contractNFT, setContractNFT] = useState(null)
     const [contractNFTMarketplace, setContractNFTMarketplace] = useState(null)
     const [listPrice, setListPrice] = useState("")
-    const [selectedNFT, setSelectedNFT] = useState("")
-    const [nftContract, setNftContract] = useState(null)
 
     useEffect(async () => {
         var result = await connectWeb3()
@@ -60,8 +58,6 @@ export default function SellNFT_existing() {
         var nftContract = await connectNFTContract(formParams.nftAddress)
         if (!nftContract) {
             return setMessage("NFT address invalid!")
-        } else {
-            setNftContract(nftContract)
         }
 
         //check is owner
@@ -80,10 +76,10 @@ export default function SellNFT_existing() {
             return setMessage("You are not the owner!")
         }
 
-        await listNFT()
+        await listNFT(nftContract)
     }
 
-    async function listNFT() {
+    async function listNFT(nftContract) {
         console.log("Going to pop wallet now to pay gas...")
         setLoading(true)
 
@@ -120,7 +116,7 @@ export default function SellNFT_existing() {
             return setMessage("No permission of the NFT!")
         }
 
-        setMessage("Paying gas fees...")
+        setMessage("Paying gas for listing...")
 
         var sellingPrice = web3?.utils?.toWei(formParams.price, "ether")
         await contractNFTMarketplace.methods
@@ -206,8 +202,7 @@ export default function SellNFT_existing() {
                     onClick={submitForm}
                     className="font-bold mt-10 w-full bg-purple-500 text-white rounded p-2 shadow-lg"
                 >
-                    {selectedNFT ? "List " : "Select "}
-                    NFT
+                    Select NFT
                 </button>
             )}
         </>
